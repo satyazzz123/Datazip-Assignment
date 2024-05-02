@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ch-configmap
+data:
+  storage.xml: |
+    <clickhouse>
+        <listen_host>0.0.0.0</listen_host>
+        <path>/data/clickhouse/</path>
+        <user_directories>
+            <local_directory>
+                <path>/data/</path>
+            </local_directory>
+        </user_directories>
+    </clickhouse>
