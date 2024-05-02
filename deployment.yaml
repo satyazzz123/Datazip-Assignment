@@ -20,14 +20,16 @@ spec:
           persistentVolumeClaim:
             claimName: clickhouse
       containers:
-      - name: clickhouse
-        image: clickhouse/clickhouse-server
-        ports:
-        - containerPort: 8123
-        - containerPort: 9000
-        volumeMounts:
-          - name: clickhouse-userconfigmap
-            mountPath: /etc/clickhouse-server/config.d/storage.xml
-            subPath: storage.xml
-          - name: clickhouse-storage
-            mountPath: /data
+        - name: clickhouse
+          image: clickhouse/clickhouse-server
+          ports:
+            - containerPort: 8123
+              name: http
+            - containerPort: 9000
+              name: native
+          volumeMounts:
+            - name: clickhouse-userconfigmap
+              mountPath: /etc/clickhouse-server/config.d/storage.xml
+              subPath: storage.xml
+            - name: clickhouse-storage
+              mountPath: /data

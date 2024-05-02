@@ -5,11 +5,27 @@ metadata:
 data:
   storage.xml: |
     <clickhouse>
-        <listen_host>0.0.0.0</listen_host>
-        <path>/data/clickhouse/</path>
-        <user_directories>
-            <local_directory>
-                <path>/data/</path>
-            </local_directory>
-        </user_directories>
+        <storage_configuration>
+            <disks>
+                <hot_disk>
+                    <path>/mnt/clickhouse/hot/</path>
+                </hot_disk>
+                <cold_disk>
+                    <path>/mnt/clickhouse/cold/</path>
+                </cold_disk>
+            </disks>
+            <policies>
+                <hot_cold_policy>
+                    <volumes>
+                        <hot>
+                            <disk>hot_disk</disk>
+                        </hot>
+                        <cold>
+                            <disk>cold_disk</disk>
+                        </cold>
+                    </volumes>
+                    <move_factor>0.2</move_factor>
+                </hot_cold_policy>
+            </policies>
+        </storage_configuration>
     </clickhouse>

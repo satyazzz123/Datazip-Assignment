@@ -6,7 +6,7 @@ metadata:
     type: local
 spec:
   capacity:
-    storage: 6Gi
+    storage: 50Gi
   accessModes:
     - ReadWriteOnce
   storageClassName: standard-rwo
