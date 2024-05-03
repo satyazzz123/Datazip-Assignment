@@ -1,0 +1,3 @@
+configMapName: ch-configmap  
+appName: clickhouse
+imageName: clickhouse/clickhouse-server

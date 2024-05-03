@@ -11,5 +11,5 @@ spec:
     - ReadWriteOnce
   storageClassName: standard-rwo
   hostPath:
-    path: /mnt/clickhouse
+    path: /mnt/clickhouse  # This should be the root path for both hot and cold disks
   persistentVolumeReclaimPolicy: Retain
