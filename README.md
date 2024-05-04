@@ -12,12 +12,12 @@ $ helm install initial . --values ./values.yaml
 ## To test the Hot-cold Configuration
 To run commands interactively inside a pod
 ```
-kubectl exec -it <POD NAME> -- /bin/bash
+ kubectl exec -it <POD NAME> -- /bin/bash
 ```
 Then run this to access clickhouse client
 
 ```
-clickhouse-client
+ clickhouse-client
 ```
 We can see the disks being created also through this
 
