@@ -6,15 +6,15 @@ $ git clone
 $ cd clickhouse-assignment
 $ helm install initial . --values ./values.yaml
 ```
-## After a while the Deployment along with service will be up
+## After a while the deployment along with service will be up
 ![image](https://github.com/satyazzz123/clickhouse-deloyment/assets/105061492/e47800a0-9609-4d6b-ade1-e0b428c14b6d)
 
-## To test the Hot-cold Configuration
+## To test the Hot-Cold Configuration
 To run commands interactively inside a pod
 ```
  kubectl exec -it <POD NAME> -- /bin/bash
 ```
-Then run this to access clickhouse client
+Then run this to access `clickhouse-client`
 
 ```
  clickhouse-client
@@ -27,7 +27,7 @@ FROM system.disks
 ```
 ![image](https://github.com/satyazzz123/clickhouse-deloyment/assets/105061492/25a587e6-9b33-4cad-bb32-f5be752cb3c9)
 
-Then once inside clickhouse-client we create a Table
+Then once inside `clickhouse-client` we create a Table
 ```
 CREATE TABLE dz_test
 (
@@ -62,7 +62,7 @@ insert into dz_test select number, number, '2023-01-01' from numbers(1e11)
 
 
 
-## We can also test the hot cold configuration through this
+## We can also test the hot-cold configuration through this
 ```
 SELECT
     disk_name,
