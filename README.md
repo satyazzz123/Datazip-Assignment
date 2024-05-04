@@ -2,9 +2,9 @@
 
 ### How to run the Chart
 ```
-git clone
-cd clickhouse-assignment
-helm install initial . --values ./values.yaml
+$ git clone
+$ cd clickhouse-assignment
+$ helm install initial . --values ./values.yaml
 ```
 ## After a while the Deployment along with service will be up
 ![image](https://github.com/satyazzz123/clickhouse-deloyment/assets/105061492/e47800a0-9609-4d6b-ade1-e0b428c14b6d)
